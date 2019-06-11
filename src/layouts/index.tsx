@@ -14,7 +14,7 @@ const BasicLayout: React.FC = props => {
 			<Sider>Sider</Sider>
 			<Layout>
 				<Header>Header</Header>
-				<Content>Content</Content>
+				<Content>{props.children}</Content>
 				<Footer>Footer</Footer>
 			</Layout>
 		</Layout>

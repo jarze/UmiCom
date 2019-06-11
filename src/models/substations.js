@@ -1,11 +1,12 @@
-import { querySubstations } from '../services/substation';
+import { querySubstations, queryDeals } from '../services/substation';
 
 export default {
 	namespace: 'substations',
 
 	state: {
 		substationLists: [],
-		curSubstation: {}
+		curSubstation: {},
+		deals: []
 	},
 
 	effects: {
@@ -14,6 +15,13 @@ export default {
 			yield put({
 				type: 'querySuccess',
 				payload: { 'substationLists': data.data }
+			});
+		},
+		*fetchDataDeals({ payload }, { call, put }) {
+			let data = yield call(queryDeals);
+			yield put({
+				type: 'querySuccess',
+				payload: { 'deals': data.data.list }
 			});
 		}
 
