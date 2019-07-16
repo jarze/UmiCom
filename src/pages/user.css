@@ -1,4 +1,19 @@
-
 .normal {
-  background: #79A2F2;
+  /* background: #79A2F2; */
+  height: 100%;
+}
+
+
+.left_content {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin-left: 20%;
+  background-color: aliceblue;
+  overflow-y: scroll;
+}
+
+.fix {
+  position: absolute;
+  bottom: 0;
 }

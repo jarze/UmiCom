@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './index.css';
 import SubstationPop from '../components/SubstationPop';
-// import substations from '../../mock/substation/substations.json';
 import { connect } from 'dva';
-
+import { Button } from 'antd';
 import CTable from '../components/common/CTable';
 
 const Subs = ({
@@ -97,24 +96,15 @@ const Subs = ({
 
 	return (
 		<div className={styles.normal}>
-			<div className={styles.welcome} />
-			<ul className={styles.list}>
-				<li>To get started, edit <code>src/pages/index.js</code> and save to reload.</li>
-				<li>
-					<a href="https://umijs.org/guide/getting-started.html">
-						Getting Started
-						</a>
-				</li>
-			</ul>
-			<div onClick={getData}>GetData</div>
-			<div>
-				<SubstationPop data={data}>
-					<a>AAAAA</a>
-				</SubstationPop>
-			</div>
-			<div>
-				<CTable {...props} />
-			</div>
+			<Button onClick={getData}>GetData</Button>
+			<br />
+			<br />
+			<SubstationPop data={data}>
+				<Button type='primary'>AAAAA</Button>
+			</SubstationPop>
+			<br />
+			<br />
+			<CTable {...props} />
 		</div>
 	);
 };
